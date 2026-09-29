@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Titanic Survival Predictor</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <p class="badge">Titanic ML Predictor</p>
+      <h1>Dự đoán khả năng sống sót</h1>
+      <p>Nhập thông tin hành khách, hệ thống sẽ dùng model đã train để dự đoán sống sót hay không.</p>
+    </section>
+
+    <section class="card">
+      <div class="form-grid">
+        <label>
+          TitleGroup
+          <select id="titleGroup">
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="Master">Master</option>
+            <option value="Dr">Dr</option>
+          </select>
+        </label>
+
+        <label>
+          Sex
+          <select id="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+
+        <label>
+          Age
+          <input type="number" id="age" value="30" min="0" max="80">
+        </label>
+
+        <label>
+          FamilySize
+          <input type="number" id="familySize" value="1" min="1" max="11">
+        </label>
+
+        <label>
+          Pclass
+          <select id="pclass">
+            <option value="1">1st Class</option>
+            <option value="2">2nd Class</option>
+            <option value="3">3rd Class</option>
+          </select>
+        </label>
+
+        <label>
+          Fare
+          <input type="number" id="fare" value="20" min="0" step="0.1">
+          <small id="fareWarning" class="warning-text"></small>
+        </label>
+
+        <label>
+          Embarked
+          <select id="embarked">
+            <option value="S">S - Southampton</option>
+            <option value="C">C - Cherbourg</option>
+            <option value="Q">Q - Queenstown</option>
+          </select>
+        </label>
+
+        <label>
+          Deck
+          <select id="deck">
+            <option value="U">U - Unknown</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+          </select>
+        </label>
+      </div>
+
+      <button onclick="predictSurvival()">Dự đoán</button>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
